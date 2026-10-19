@@ -1,0 +1,7 @@
+services:
+  ad-engine:
+    build: .
+    ports: ["127.0.0.1:8000:8000"]   # محلي فقط؛ ضع reverse proxy مع HTTPS إن أردت وصولاً خارجياً
+    env_file: .env
+    volumes: ["./data:/srv/data"]
+    restart: unless-stopped
